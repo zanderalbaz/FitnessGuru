@@ -11,6 +11,7 @@ MODULES:
 + Progress Reports
 
 USER STORIES: (As a… I want… So I can…)
+# TODO: Look through user stories and sory by priority (tiers OR just a strict ordering)
 
 1. As a Staff, I want to view and update member information so I can verify memberships and process membership transactions.
     1. Task
