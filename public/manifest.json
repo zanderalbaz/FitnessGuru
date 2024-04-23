@@ -1,0 +1,25 @@
+{
+  "short_name": "FitnessGuru Webapp",
+  "name": "Fitness Guru",
+  "icons": [
+    {
+      "src": "place-new-favicon-here/favicon.ico",
+      "sizes": "64x64 32x32",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "place-new-larger-png-here.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "even-larger-here.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}

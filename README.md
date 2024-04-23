@@ -7,6 +7,8 @@ https://zalbaschool.notion.site/Training-a7b2b17158be4e64bdee87d56c87d816
 GOAL: Implement a custom web solution for Fitness Guru Inc. in order to manage new members and staff, display progress reports, and train employees.
 
 
+
+
 They decided to go with Custom-built software (does not ,mean this is the best solition)
 + NEEDS TO BE CONNECTED TO A DATABASE!
 
