@@ -1,3 +1,8 @@
+# Link to class project notes 
+https://zalbaschool.notion.site/FItness-Guru-Inc-Project-359d172d5b7a41a3afe13c6b0c052150
+# Link to documentation & training notes
+https://zalbaschool.notion.site/Training-a7b2b17158be4e64bdee87d56c87d816
+
 # FitnessGuru
 GOAL: Implement a custom web solution for Fitness Guru Inc. in order to manage new members and staff, display progress reports, and train employees.
 
