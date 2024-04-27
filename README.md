@@ -9,6 +9,15 @@ GOAL: Implement a custom web solution for Fitness Guru Inc. in order to manage n
 They decided to go with Custom-built software (does not ,mean this is the best solition)
 + NEEDS TO BE CONNECTED TO A DATABASE!
 
+# Running the Application
+1. Download and install VS Code from https://code.visualstudio.com/download
+2. navigate to /FitnessGuru in the CLI
+3. run `npm install` then `npm start`
+In order to use the database with this application you must:
+1. open CLI
+2. navigate to /model
+3. run `node Database.js` 
+
 # Sprint 1 
  1. As a Staff, I want to view and update member information so I can verify memberships and process membership transactions.
     1. Task

@@ -4,7 +4,6 @@ import {useState} from 'react'
 import gsap from "gsap";
 import {useGSAP} from "@gsap/react";
 
-
 function HomePage() {
 
   //GSAP EXAMPLE FOR CTA CLASS 

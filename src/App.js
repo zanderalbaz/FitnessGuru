@@ -5,13 +5,13 @@ import '../src/views/css/global.css';
 import '../src/tailwindcss/styles.css';
 
 import  HomePage from '../src/views/components/HomePage' ;
+import NavBar from '../src/views/components/Navbar';
+
 
 function App() {
-   
-
     return (
         <Router>
-            {/* <Header/> */}
+            <NavBar/>
             <Routes>
                 <Route path="/" element={<HomePage/>}/>
             </Routes>
