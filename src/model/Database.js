@@ -150,9 +150,6 @@ const initStaffCourseTable = () => {
 
 
 const listen = () => {
-    app.use(cors());
-    app.use(bodyParser.json());
-
     app.listen(PORT, () => {
         console.log(`Server is running on port ${PORT}`);
     });
@@ -184,6 +181,29 @@ const connectToDatabase = () => {
         return db;
     });
 }
+app.use(cors());
+app.use(bodyParser.json());
+
+
+app.post('/create-member', (req, res) => {
+    const { username, password, email, location } = req.body;
+    return res.status(201).json({ message: 'Form submitted Successfully' });
+    //TODO: Query to see if user already exists.
+    //      Create new user if they do not exist
+
+    // const stmt = db.prepare('INSERT INTO CustomerInquiry (name, email, phoneNumber, message) VALUES (?, ?, ?, ?)');
+  
+    // stmt.run(name, email, phoneNumber, message, function (err) {
+    //   stmt.finalize(); 
+  
+    //   if (err) {
+    //     console.error(err);
+    //     return res.status(500).json({ error: 'Internal server error' });
+    //   }
+  
+    //   res.status(201).json({ message: 'Form data saved successfully' });
+    // });
+  });
 
 
 
@@ -192,44 +212,6 @@ listen();
 
 
 
-    // addContact(contact, callback) {
-    //     const {name, email, phoneNumber, message} = contact;
-    //     const sqlInsert = `INSERT INTO CustomerInquiry (name, email, phoneNumber, message) VALUES (?, ?, ?, ?)`;
-
-    //     this.db.run(sqlInsert, [name, email, phoneNumber, message], function (err) {
-    //         if (err) {
-    //             callback(err);
-    //         } else {
-    //             callback(null, {id: this.lastID});
-    //         }
-    //     });
-    // }
-
-    // getAllContacts(callback) {
-    //     const sqlSelect = `SELECT * FROM CustomerInquiry`;
-
-    //     this.db.all(sqlSelect, [], (err, rows) => {
-    //         if (err) {
-    //             callback(err);
-    //         } else {
-    //             callback(null, rows);
-    //         }
-    //     });
-    // }
-
-
-    // addNewsletterSubscriber(email, callback) {
-    //     const sql = `INSERT INTO NewsletterSubscribers (email) VALUES (?)`;
-
-    //     this.db.run(sql, [email], function(err) {
-    //         if (err) {
-    //             callback(err, null);
-    //         } else {
-    //             callback(null, { id: this.lastID, email: email });
-    //         }
-    //     });
-    // }
-    // // Implement additional methods for updating, and deleting records as needed
 
 
 
@@ -242,25 +224,4 @@ listen();
 
 
 
-
-
-
-
-// Endpoint for handling form submissions
-// app.post('/submit-form', (req, res) => {
-//   const { name, email, phoneNumber, message } = req.body;
-
-//   const stmt = db.prepare('INSERT INTO CustomerInquiry (name, email, phoneNumber, message) VALUES (?, ?, ?, ?)');
-
-//   stmt.run(name, email, phoneNumber, message, function (err) {
-//     stmt.finalize(); 
-
-//     if (err) {
-//       console.error(err);
-//       return res.status(500).json({ error: 'Internal server error' });
-//     }
-
-//     res.status(201).json({ message: 'Form data saved successfully' });
-//   });
-// });
 

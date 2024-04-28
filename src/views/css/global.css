@@ -9,6 +9,7 @@ body {
     padding: 0;
     clear: both;
     letter-spacing: 0.06em;
+    background-color: beige;
 }
 html {
     min-width: 430px;

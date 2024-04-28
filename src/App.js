@@ -5,6 +5,8 @@ import '../src/views/css/global.css';
 import '../src/tailwindcss/styles.css';
 
 import  HomePage from '../src/views/components/HomePage' ;
+import  LoginPage from '../src/views/components/LoginPage' ;
+
 import NavBar from '../src/views/components/Navbar';
 
 
@@ -13,7 +15,9 @@ function App() {
         <Router>
             <NavBar/>
             <Routes>
-                <Route path="/" element={<HomePage/>}/>
+                <Route path="/" element={<LoginPage/>}/>
+                <Route path="/fuck" element={<HomePage/>}/>
+
             </Routes>
             {/* <Footer/> */}
         </Router>
