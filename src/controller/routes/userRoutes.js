@@ -13,21 +13,20 @@ function login(db, req, res) {
 
   
     getUserID(db, username)
-        .then(result => {
+        .then((result) => {
             if (!result.userId) {
-                res.status(401).json({ error: 'Invalid username or password' });
-                return;
+                return false;
             }
             return verifyPassword(db, result.userId, password);
         })
-        .then(valid => {
+        .then((valid) => {
             if (valid) {
                 res.status(200).json({ message: 'Login successful' });
             } else {
                 res.status(401).json({ error: 'Invalid username or password' });
             }
         })
-        .catch(err => {
+        .catch((err) => {
             console.error('Error during login:', err);
             res.status(500).json({ error: 'Internal Server Error' });
         });

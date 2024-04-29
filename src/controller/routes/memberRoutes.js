@@ -1,5 +1,7 @@
 const express = require('express');
+const moment = require('moment'); 
 const router = express.Router();
+
 
 module.exports = function(db) {
     // Route handlers
@@ -11,9 +13,21 @@ module.exports = function(db) {
 function createMember(db, req, res) {
     const { username, password, email, location } = req.body;
 
-    checkUserExists(db, username) 
+    let locationId;
+    let userId;
+
+    checkUserExists(db, username)
         .then(() => checkLocationExists(db, location))
-        .then((locationId) => insertNewUser(db, username, password, email, locationId))
+        .then((locId) => {
+            locationId = locId;
+            return insertNewUser(db, username, password, email, locationId);
+        })
+        .then((insertedUserId) => {
+            userId = insertedUserId;
+            const currentDate = moment().format('YYYY-MM-DD'); //Get current date
+            const membershipType = 'none'; 
+            return insertNewMember(db, userId, currentDate, membershipType);
+        })
         .then(() => res.status(201).json({ message: 'Member created successfully' }))
         .catch((err) => {
             console.error('Error creating member:', err);
@@ -62,10 +76,24 @@ function checkUserExists(db, username) {
     });
 }
 
+
 function insertNewUser(db, username, password, email, locationId) {
     return new Promise((resolve, reject) => {
         const insertUserQuery = `INSERT INTO user (username, password, email, location_id) VALUES (?, ?, ?, ?)`;
         db.run(insertUserQuery, [username, password, email, locationId], function (err) {
+            if (err) {
+                reject(err);
+            } else {
+                resolve(this.lastID); // return id of last insert
+            }
+        });
+    });
+}
+
+function insertNewMember(db, userId, joinDate, membershipType) {
+    return new Promise((resolve, reject) => {
+        const insertMemberQuery = `INSERT INTO member (join_date, membership_type, user_id) VALUES (?, ?, ?)`;
+        db.run(insertMemberQuery, [joinDate, membershipType, userId], function (err) {
             if (err) {
                 reject(err);
             } else {
