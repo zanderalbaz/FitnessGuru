@@ -1,14 +1,4 @@
-const express = require('express');
-const moment = require('moment'); 
-const router = express.Router();
-
-
-module.exports = function(db) {
-    // Route handlers
-    router.post('/create-member', createMember.bind(null, db));
-
-    return router;
-};
+const moment = require('moment');
 
 function createMember(db, req, res) {
     const { username, password, email, location } = req.body;
@@ -76,7 +66,6 @@ function checkUserExists(db, username) {
     });
 }
 
-
 function insertNewUser(db, username, password, email, locationId) {
     return new Promise((resolve, reject) => {
         const insertUserQuery = `INSERT INTO user (username, password, email, location_id) VALUES (?, ?, ?, ?)`;
@@ -102,3 +91,5 @@ function insertNewMember(db, userId, joinDate, membershipType) {
         });
     });
 }
+
+module.exports = { createMember };
