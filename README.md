@@ -25,6 +25,16 @@ In order to use the database with this application you must:
  2. As a Manager, I want to upload training videos so that I can have new employees get caught up to speed quickly.
 17. As a Manager, I want to know how my fitness center is doing in relation to the other fitness centers.
 
+# Sprint 2
+4. As a Manager, I want to be able to assign training videos to any employee so the new employees do not watch the wrong videos
+    1. As a Staff, I want training courses to be tailored to my specific role at Fitness Guru Inc, so I can get up to speed quickly.
+7. As a Member, I would like to be able to cancel or update my membership online, so I do not have to call or talk to anyone.
+12. As a Manager, I would like to add or remove or update staff accounts at any time so I can process new employees quickly.
+  
+# Sprint 3
+10. As a Member, I would like to be able to delete my account + all of its data so I can choose to leave Fitness Guru easily at any time.
+18. As a Member, I want to know how many times i’ve been to the gym in the past year, month, week so I can track my fitness progress.
+19. As a Staff/Trainer, I want to know what my customer rating is, as well as memberships sold in the last week, month, year, so I can track my progress as an employee and improve.
 
 
 MODULES:
