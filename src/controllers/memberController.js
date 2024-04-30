@@ -14,7 +14,7 @@ function createMember(db, req, res) {
         })
         .then((insertedUserId) => {
             userId = insertedUserId;
-            const currentDate = moment().format('YYYY-MM-DD'); //Get current date
+            const currentDate = moment().format('YYYY-MM-DD');
             const membershipType = 'none'; 
             return insertNewMember(db, userId, currentDate, membershipType);
         })

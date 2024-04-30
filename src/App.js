@@ -17,6 +17,7 @@ const App = () => {
         <Routes> {/*THESE ARE FOR DECLARING ROUTES ONLY. THIS ONLY EFFECTS WHERE PATHS GO. IT DOES NOT RENDER ANYTHING */}
           <Route path="/login" element={<LoginPage />} />
           <Route path="/" element={<HomePage />} /> 
+          <Route path="/manage-members" element={<StaffPage />} /> 
           <Route path="/manage-staff" element={<ManagerPage />} /> 
           <Route path="/courses" element={<StaffPage />} />
         </Routes>

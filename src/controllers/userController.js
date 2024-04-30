@@ -1,7 +1,7 @@
 function login(db, req, res) {
     const { username, password } = req.body;
 
-    let userId; // Define userId variable to store user ID
+    let userId;
 
     getUserID(db, username)
         .then((result) => {
@@ -35,7 +35,7 @@ function getUserID(db, username) {
             if (err) {
                 reject(err);
             } else if (!row) {
-                resolve({ userId: null }); // Resolve with null if user not found
+                resolve({ userId: null });
             } else {
                 resolve({ userId: row.uid });
             }

@@ -14,7 +14,7 @@ const LoginForm = () => {
   const handleSubmitLogin = async (e) => {
     e.preventDefault();
     try {
-      await login(username, password);
+      await login(username, password); //from AuthContext
       setUsername('');
       setPassword('');
     } catch (error) {
@@ -54,7 +54,7 @@ const LoginForm = () => {
 
   return (
     <div className='bg-[rgba(0,0,0,0.2)] pt-[5%] h-[100vh] relative overflow-hidden'>
-      <img src={login_hero} className='max-w-none absolute top-0 small:h-full ' alt="Login hero"></img>
+      <img src={login_hero} className='max-w-none absolute top-0 small:h-full' alt="Login hero"></img>
       {displayLogin ? (
         <div className="w-full grid justify-evenly">
           <form onSubmit={handleSubmitLogin} id="login" className="m-auto relative bg-[darkred] text-[beige] p-[1rem] grid justify-evenly">
