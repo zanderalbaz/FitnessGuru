@@ -9,6 +9,8 @@ import HomePage from '../src/views/components/HomePage';
 import LoginPage from '../src/views/components/auth/LoginPage';
 import NavBar from '../src/views/components/Navbar';
 import Dashboard from '../src/views/components/admin/Dashboard'
+import ManageMembers from '../src/views/components/ManageMembers'
+import ManageStaff from '../src/views/components/ManageStaff'
 
 const App = () => {
   return (
@@ -18,8 +20,8 @@ const App = () => {
         <Routes> {/*THESE ARE FOR DECLARING ROUTES ONLY. THIS ONLY EFFECTS WHERE PATHS GO. IT DOES NOT RENDER ANYTHING */}
           <Route path="/login" element={<LoginPage />} />
           <Route path="/" element={<HomePage />} /> 
-          <Route path="/manage-members" element={<StaffPage />} /> 
-          <Route path="/manage-staff" element={<ManagerPage />} /> 
+          <Route path="/manage-members" element={<ManageMembers />} /> 
+          <Route path="/manage-staff" element={<ManageStaff />} /> 
           <Route path="/courses" element={<StaffPage />} />
           <Route path="/Dashboard" element={<Dashboard />} />
         </Routes>

@@ -14,7 +14,8 @@ app.use(bodyParser.json());
 
 connectToDatabase() //Returns DB Instance (db)
     .then((db) => {
-        app.use('/api/member', memberRoutes(db));
+        app.use('/api/members', memberRoutes(db));
+        app.use('/api/staff')
         app.use('/api/user', userRoutes(db));
 
 
