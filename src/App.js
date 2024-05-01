@@ -6,8 +6,9 @@ import '../src/views/css/global.css';
 import '../src/tailwindcss/styles.css';
 
 import HomePage from '../src/views/components/HomePage';
-import LoginPage from '../src/views/components/LoginPage';
+import LoginPage from '../src/views/components/auth/LoginPage';
 import NavBar from '../src/views/components/Navbar';
+import Dashboard from '../src/views/components/admin/Dashboard'
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
           <Route path="/manage-members" element={<StaffPage />} /> 
           <Route path="/manage-staff" element={<ManagerPage />} /> 
           <Route path="/courses" element={<StaffPage />} />
+          <Route path="/Dashboard" element={<Dashboard />} />
         </Routes>
       </AuthProvider>
     </Router>

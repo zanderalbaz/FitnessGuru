@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import login_hero from './../../assets/login-hero.png';
-import { useAuth } from '../../context/AuthContext'; 
+import login_hero from '../../../assets/login-hero.png';
+import { useAuth } from '../../../context/AuthContext'; 
 
 const LoginForm = () => {
   const { login } = useAuth(); 

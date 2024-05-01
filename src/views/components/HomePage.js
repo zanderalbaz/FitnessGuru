@@ -1,402 +1,562 @@
 import React from 'react';
+import { Link } from "react-router-dom";
+import Footer from "./Footers/Footer.js";
 import photo from '../../assets/login-hero.png'
 
 
 function HomePage() {
     return (
         <div>
-          {/* Hero Section */}
-          <section class="text-gray-600 body-font">
-            <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
-              <div class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
-                <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Before they sold out
-                  <br class="hidden lg:inline-block"></br>
-                </h1>
-                <p class="mb-8 leading-relaxed">Copper mug try-hard pitchfork pour-over freegan heirloom neutra air plant cold-pressed tacos poke beard tote bag. Heirloom echo park mlkshk tote bag selvage hot chicken authentic tumeric truffaut hexagon try-hard chambray.</p>
-                <div class="flex justify-center">
-                  <button class="inline-flex text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded text-lg">Button</button>
-                  <button class="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg">Button</button>
-                </div>
-              </div>
-              <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
-                <img class="object-cover object-center rounded" alt="hero" src="https://dummyimage.com/720x600"/>
-              </div>
-            </div>
-          </section>
-
-          {/* Statistical Section */}
-          <section class="text-gray-600 body-font">
-            <div class="container px-5 pb-24 mx-auto">
-              <div class="flex flex-wrap -m-4 text-center">
-                <div class="p-4 md:w-1/4 sm:w-1/2 w-full">
-                  <div class="border-2 border-gray-200 px-4 py-6 rounded-lg">
-                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="text-red-500 w-12 h-12 mb-3 inline-block" viewBox="0 0 24 24">
-                      <path d="M8 17l4 4 4-4m-4-5v9"></path>
-                      <path d="M20.88 18.09A5 5 0 0018 9h-1.26A8 8 0 103 16.29"></path>
-                    </svg>
-                    <h2 class="title-font font-medium text-3xl text-gray-900">2.7K</h2>
-                    <p class="leading-relaxed">Downloads</p>
-                  </div>
-                </div>
-                <div class="p-4 md:w-1/4 sm:w-1/2 w-full">
-                  <div class="border-2 border-gray-200 px-4 py-6 rounded-lg">
-                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="text-red-500 w-12 h-12 mb-3 inline-block" viewBox="0 0 24 24">
-                      <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"></path>
-                      <circle cx="9" cy="7" r="4"></circle>
-                      <path d="M23 21v-2a4 4 0 00-3-3.87m-4-12a4 4 0 010 7.75"></path>
-                    </svg>
-                    <h2 class="title-font font-medium text-3xl text-gray-900">1.3K</h2>
-                    <p class="leading-relaxed">Users</p>
-                  </div>
-                </div>
-                <div class="p-4 md:w-1/4 sm:w-1/2 w-full">
-                  <div class="border-2 border-gray-200 px-4 py-6 rounded-lg">
-                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="text-red-500 w-12 h-12 mb-3 inline-block" viewBox="0 0 24 24">
-                      <path d="M3 18v-6a9 9 0 0118 0v6"></path>
-                      <path d="M21 19a2 2 0 01-2 2h-1a2 2 0 01-2-2v-3a2 2 0 012-2h3zM3 19a2 2 0 002 2h1a2 2 0 002-2v-3a2 2 0 00-2-2H3z"></path>
-                    </svg>
-                    <h2 class="title-font font-medium text-3xl text-gray-900">74</h2>
-                    <p class="leading-relaxed">Files</p>
-                  </div>
-                </div>
-                <div class="p-4 md:w-1/4 sm:w-1/2 w-full">
-                  <div class="border-2 border-gray-200 px-4 py-6 rounded-lg">
-                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="text-red-500 w-12 h-12 mb-3 inline-block" viewBox="0 0 24 24">
-                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                    </svg>
-                    <h2 class="title-font font-medium text-3xl text-gray-900">46</h2>
-                    <p class="leading-relaxed">Places</p>
-                  </div>
+        <div className="relative pt-16 pb-32 flex content-center items-center justify-center min-h-screen-75">
+          <div
+            className="absolute top-0 w-full h-full bg-center bg-cover"
+            style={{
+              backgroundImage:
+                "url('https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80')",
+            }}
+          >
+            <span
+              id="blackOverlay"
+              className="w-full h-full absolute opacity-75 bg-black"
+            ></span>
+          </div>
+          <div className="container relative mx-auto">
+            <div className="items-center flex flex-wrap">
+              <div className="w-full lg:w-6/12 px-4 ml-auto mr-auto text-center">
+                <div className="pr-12">
+                  <h1 className="text-white font-semibold text-5xl">
+                    Your story starts with us.
+                  </h1>
+                  <p className="mt-4 text-lg text-blueGray-200">
+                    This is a simple example of a Landing Page you can build
+                    using Notus React. It features multiple CSS components based
+                    on the Tailwind CSS design system.
+                  </p>
                 </div>
               </div>
             </div>
-          </section>
-
-          {/* Content Section */}
-          <section>
-              <div class=" flex flex-col items-center px-5 py-8 mx-auto max-w-7xl sm:px-6 lg:px-8">
-                  <div class="flex flex-col w-full max-w-3xl mx-auto prose text-left prose-blue">
-                      <div class="w-full mx-auto">
-                          <h1>A small headline to switch your visitors into users.</h1>
-                          <h2>A small headline to switch your visitors into users.</h2>
-                          <p>Right. Say that again. No, no, George, look, it's just an act, right? Okay, so 9:00 you're strolling through the parking lot, you see us struggling.</p>
-                      </div>
-                  </div>
-                  <div class="flex flex-col items-center pb-10 mx-auto my-10 border-b border-gray-200 max-w-7xl sm:flex-row">
-                      <div class="inline-flex items-center justify-center flex-shrink-0 w-20 h-20 text-neutral-600 rounded-full bg-gray-50 sm:mr-10">
-                          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" class="w-10 h-10" viewBox="0 0 24 24">
-                              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                              <circle cx="12" cy="12" r="9"></circle>
-                              <line x1="3.6" y1="15" x2="14.15" y2="15"></line>
-                              <line x1="3.6" y1="15" x2="14.15" y2="15" transform="rotate(72 12 12)"></line>
-                              <line x1="3.6" y1="15" x2="14.15" y2="15" transform="rotate(144 12 12)"></line>
-                              <line x1="3.6" y1="15" x2="14.15" y2="15" transform="rotate(216 12 12)"></line>
-                              <line x1="3.6" y1="15" x2="14.15" y2="15" transform="rotate(288 12 12)"></line>
-                          </svg>
-                      </div>
-                      <div class="flex-grow mt-6 prose text-center sm:text-left sm:mt-0 prose-md">
-                          <h2>Short length headline.</h2>
-                          <p>Free and Premium themes, UI Kit's, templates and landing pages built with Tailwind CSS, HTML &amp; Next.js.</p>
-                      </div>
-                  </div>
-                  <div class="flex flex-col items-center pb-10 mx-auto my-10 border-b border-gray-200 max-w-7xl sm:flex-row">
-                      <div class="inline-flex items-center justify-center flex-shrink-0 w-20 h-20 text-neutral-600 rounded-full bg-gray-50 sm:mr-10">
-                          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" class="w-10 h-10" viewBox="0 0 24 24">
-                              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                              <circle cx="12" cy="12" r="9"></circle>
-                              <line x1="3.6" y1="15" x2="14.15" y2="15"></line>
-                              <line x1="3.6" y1="15" x2="14.15" y2="15" transform="rotate(72 12 12)"></line>
-                              <line x1="3.6" y1="15" x2="14.15" y2="15" transform="rotate(144 12 12)"></line>
-                              <line x1="3.6" y1="15" x2="14.15" y2="15" transform="rotate(216 12 12)"></line>
-                              <line x1="3.6" y1="15" x2="14.15" y2="15" transform="rotate(288 12 12)"></line>
-                          </svg>
-                      </div>
-                      <div class="flex-grow mt-6 prose text-center sm:text-left sm:mt-0 prose-md">
-                          <h2>Short length headline.</h2>
-                          <p>Free and Premium themes, UI Kit's, templates and landing pages built with Tailwind CSS, HTML &amp; Next.js.</p>
-                      </div>
-                  </div>
-                  <div class="flex flex-col items-center pb-10 mx-auto my-10 border-b border-gray-200 max-w-7xl sm:flex-row">
-                      <div class="inline-flex items-center justify-center flex-shrink-0 w-20 h-20 text-neutral-600 rounded-full bg-gray-50 sm:mr-10">
-                          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" class="w-10 h-10" viewBox="0 0 24 24">
-                              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                              <circle cx="12" cy="12" r="9"></circle>
-                              <line x1="3.6" y1="15" x2="14.15" y2="15"></line>
-                              <line x1="3.6" y1="15" x2="14.15" y2="15" transform="rotate(72 12 12)"></line>
-                              <line x1="3.6" y1="15" x2="14.15" y2="15" transform="rotate(144 12 12)"></line>
-                              <line x1="3.6" y1="15" x2="14.15" y2="15" transform="rotate(216 12 12)"></line>
-                              <line x1="3.6" y1="15" x2="14.15" y2="15" transform="rotate(288 12 12)"></line>
-                          </svg>
-                      </div>
-                      <div class="flex-grow mt-6 prose text-center sm:text-left sm:mt-0 prose-md">
-                          <h2>Short length headline.</h2>
-                          <p>Free and Premium themes, UI Kit's, templates and landing pages built with Tailwind CSS, HTML &amp; Next.js.</p>
-                      </div>
-                  </div>
-              </div>
-          </section>
-
-          {/* Image Collage Section */}
-          <section class="text-gray-600 body-font">
-            <div class="container px-5 py-24 mx-auto flex flex-wrap">
-              <div class="flex w-full mb-20 flex-wrap">
-                <h1 class="sm:text-3xl text-2xl font-medium title-font text-gray-900 lg:w-1/3 lg:mb-0 mb-4">Master Cleanse Reliac Heirloom</h1>
-                <p class="lg:pl-6 lg:w-2/3 mx-auto leading-relaxed text-base">Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical gentrify, subway tile poke farm-to-table. Franzen you probably haven't heard of them man bun deep jianbing selfies heirloom.</p>
-              </div>
-              <div class="flex flex-wrap md:-m-2 -m-1">
-                <div class="flex flex-wrap w-1/2">
-                  <div class="md:p-2 p-1 w-1/2">
-                    <img alt="gallery" class="w-full object-cover h-full object-center block" src="https://dummyimage.com/500x300"/>
-                  </div>
-                  <div class="md:p-2 p-1 w-1/2">
-                    <img alt="gallery" class="w-full object-cover h-full object-center block" src="https://dummyimage.com/501x301"/>
-                  </div>
-                  <div class="md:p-2 p-1 w-full">
-                    <img alt="gallery" class="w-full h-full object-cover object-center block" src="https://dummyimage.com/600x360"/>
-                  </div>
-                </div>
-                <div class="flex flex-wrap w-1/2">
-                  <div class="md:p-2 p-1 w-full">
-                    <img alt="gallery" class="w-full h-full object-cover object-center block" src="https://dummyimage.com/601x361"/>
-                  </div>
-                  <div class="md:p-2 p-1 w-1/2">
-                    <img alt="gallery" class="w-full object-cover h-full object-center block" src="https://dummyimage.com/502x302"/>
-                  </div>
-                  <div class="md:p-2 p-1 w-1/2">
-                    <img alt="gallery" class="w-full object-cover h-full object-center block" src="https://dummyimage.com/503x303"/>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* Pricing Section */}
-          <section class="text-gray-600 body-font overflow-hidden">
-            <div class="container px-5 py-24 mx-auto">
-              <div class="flex flex-col text-center w-full mb-20">
-                <h1 class="sm:text-4xl text-3xl font-medium title-font mb-2 text-gray-900">Pricing</h1>
-                <p class="lg:w-2/3 mx-auto leading-relaxed text-base text-gray-500">Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical.</p>
-                <div class="flex mx-auto border-2 border-red-500 rounded overflow-hidden mt-6">
-                  <button class="py-1 px-4 bg-red-500 text-white focus:outline-none">Monthly</button>
-                  <button class="py-1 px-4 focus:outline-none">Annually</button>
-                </div>
-              </div>
-              <div class="flex flex-wrap -m-4">
-                <div class="p-4 xl:w-1/4 md:w-1/2 w-full">
-                  
-                </div>
-                <div class="p-4 xl:w-1/4 md:w-1/2 w-full">
-                  <div class="h-full p-6 rounded-lg border-2 border-red-500 flex flex-col relative overflow-hidden">
-                    <span class="bg-red-500 text-white px-3 py-1 tracking-widest text-xs absolute right-0 top-0 rounded-bl">POPULAR</span>
-                    <h2 class="text-sm tracking-widest title-font mb-1 font-medium">SILVER</h2>
-                    <h1 class="text-5xl text-gray-900 leading-none flex items-center pb-4 mb-4 border-b border-gray-200">
-                      <span>$38</span>
-                      <span class="text-lg ml-1 font-normal text-gray-500">/mo</span>
-                    </h1>
-                    <p class="flex items-center text-gray-600 mb-2">
-                      <span class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0">
-                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" class="w-3 h-3" viewBox="0 0 24 24">
-                          <path d="M20 6L9 17l-5-5"></path>
-                        </svg>
-                      </span>Vexillologist pitchfork
-                    </p>
-                    <p class="flex items-center text-gray-600 mb-2">
-                      <span class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0">
-                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" class="w-3 h-3" viewBox="0 0 24 24">
-                          <path d="M20 6L9 17l-5-5"></path>
-                        </svg>
-                      </span>Tumeric plaid portland
-                    </p>
-                    <p class="flex items-center text-gray-600 mb-2">
-                      <span class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0">
-                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" class="w-3 h-3" viewBox="0 0 24 24">
-                          <path d="M20 6L9 17l-5-5"></path>
-                        </svg>
-                      </span>Hexagon neutra unicorn
-                    </p>
-                    <p class="flex items-center text-gray-600 mb-6">
-                      <span class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0">
-                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" class="w-3 h-3" viewBox="0 0 24 24">
-                          <path d="M20 6L9 17l-5-5"></path>
-                        </svg>
-                      </span>Mixtape chillwave tumeric
-                    </p>
-                    <button class="flex items-center mt-auto text-white bg-red-500 border-0 py-2 px-4 w-full focus:outline-none hover:bg-red-600 rounded">Button
-                      <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-auto" viewBox="0 0 24 24">
-                        <path d="M5 12h14M12 5l7 7-7 7"></path>
-                      </svg>
-                    </button>
-                    <p class="text-xs text-gray-500 mt-3">Literally you probably haven't heard of them jean shorts.</p>
-                  </div>
-                </div>
-                <div class="p-4 xl:w-1/4 md:w-1/2 w-full">
-                  <div class="h-full p-6 rounded-lg border-2 border-gray-300 flex flex-col relative overflow-hidden">
-                    <h2 class="text-sm tracking-widest title-font mb-1 font-medium">GOLD</h2>
-                    <h1 class="text-5xl text-gray-900 leading-none flex items-center pb-4 mb-4 border-b border-gray-200">
-                      <span>$56</span>
-                      <span class="text-lg ml-1 font-normal text-gray-500">/mo</span>
-                    </h1>
-                    <p class="flex items-center text-gray-600 mb-2">
-                      <span class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0">
-                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" class="w-3 h-3" viewBox="0 0 24 24">
-                          <path d="M20 6L9 17l-5-5"></path>
-                        </svg>
-                      </span>Vexillologist pitchfork
-                    </p>
-                    <p class="flex items-center text-gray-600 mb-2">
-                      <span class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0">
-                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" class="w-3 h-3" viewBox="0 0 24 24">
-                          <path d="M20 6L9 17l-5-5"></path>
-                        </svg>
-                      </span>Tumeric plaid portland
-                    </p>
-                    <p class="flex items-center text-gray-600 mb-2">
-                      <span class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0">
-                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" class="w-3 h-3" viewBox="0 0 24 24">
-                          <path d="M20 6L9 17l-5-5"></path>
-                        </svg>
-                      </span>Hexagon neutra unicorn
-                    </p>
-                    <p class="flex items-center text-gray-600 mb-2">
-                      <span class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0">
-                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" class="w-3 h-3" viewBox="0 0 24 24">
-                          <path d="M20 6L9 17l-5-5"></path>
-                        </svg>
-                      </span>Vexillologist pitchfork
-                    </p>
-                    <p class="flex items-center text-gray-600 mb-6">
-                      <span class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0">
-                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" class="w-3 h-3" viewBox="0 0 24 24">
-                          <path d="M20 6L9 17l-5-5"></path>
-                        </svg>
-                      </span>Mixtape chillwave tumeric
-                    </p>
-                    <button class="flex items-center mt-auto text-white bg-gray-400 border-0 py-2 px-4 w-full focus:outline-none hover:bg-gray-500 rounded">Button
-                      <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-auto" viewBox="0 0 24 24">
-                        <path d="M5 12h14M12 5l7 7-7 7"></path>
-                      </svg>
-                    </button>
-                    <p class="text-xs text-gray-500 mt-3">Literally you probably haven't heard of them jean shorts.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* FAQs Section */}         
-          <section class="dark:bg-gray-900">
-              <div class="container max-w-4xl px-6 py-10 mx-auto">
-                  <h1 class="text-2xl font-semibold text-center text-gray-800 lg:text-3xl dark:text-white">Frequently asked questions</h1>
-
-                  <div class="mt-12 space-y-8">
-                      <div class="border-2 border-gray-100 rounded-lg dark:border-gray-700">
-                          <button class="flex items-center justify-between w-full p-8">
-                              <h1 class="font-semibold text-gray-700 dark:text-white">How i can play for my appoinment ?</h1>
-
-                              <span class="text-gray-400 bg-gray-200 rounded-full">
-                                  <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6" />
-                                  </svg>
-                              </span>
-                          </button>
-
-                          <hr class="border-gray-200 dark:border-gray-700"/>
-
-                          <p class="p-8 text-sm text-gray-500 dark:text-gray-300">
-                              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas eaque nobis, fugit odit omnis fugiat deleniti animi ab maxime cum laboriosam recusandae facere dolorum veniam quia pariatur obcaecati illo ducimus?
-                          </p>
-                      </div>
-
-                      <div class="border-2 border-gray-100 rounded-lg dark:border-gray-700">
-                          <button class="flex items-center justify-between w-full p-8">
-                              <h1 class="font-semibold text-gray-700 dark:text-white">Is the cost of the appoinment covered by private health insurance?</h1>
-
-                              <span class="text-white bg-blue-500 rounded-full">
-                                  <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-                                  </svg>
-                              </span>
-                          </button>
-                      </div>
-
-                      <div class="border-2 border-gray-100 rounded-lg dark:border-gray-700">
-                          <button class="flex items-center justify-between w-full p-8">
-                              <h1 class="font-semibold text-gray-700 dark:text-white">Do i need a referral?</h1>
-
-                              <span class="text-white bg-blue-500 rounded-full">
-                                  <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-                                  </svg>
-                              </span>
-                          </button>
-                      </div>
-
-                      <div class="border-2 border-gray-100 rounded-lg dark:border-gray-700">
-                          <button class="flex items-center justify-between w-full p-8">
-                              <h1 class="font-semibold text-gray-700 dark:text-white">What are your opening house?</h1>
-
-                              <span class="text-white bg-blue-500 rounded-full">
-                                  <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-                                  </svg>
-                              </span>
-                          </button>
-                      </div>
-
-                      <div class="border-2 border-gray-100 rounded-lg dark:border-gray-700">
-                          <button class="flex items-center justify-between w-full p-8">
-                              <h1 class="font-semibold text-gray-700 dark:text-white">What can i expect at my first consultation?</h1>
-
-                              <span class="text-white bg-blue-500 rounded-full">
-                                  <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-                                  </svg>
-                              </span>
-                          </button>
-                      </div>
-                  </div>
-              </div>
-          </section>
-
-          {/* Footer */}
-          <footer class="text-gray-600 body-font">
-            <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
-              <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-red-500 rounded-full" viewBox="0 0 24 24">
-                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-                </svg>
-                <span class="ml-3 text-xl">Tailblocks</span>
-              </a>
-              <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">© 2020 Tailblocks —
-                <a href="https://twitter.com/knyttneve" class="text-gray-600 ml-1" rel="noopener noreferrer" target="_blank">@knyttneve</a>
-              </p>
-              <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
-                <a class="text-gray-500">
-                  <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
-                    <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
-                  </svg>
-                </a>
-                <a class="ml-3 text-gray-500">
-                  <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
-                    <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
-                  </svg>
-                </a>
-                <a class="ml-3 text-gray-500">
-                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
-                    <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
-                    <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
-                  </svg>
-                </a>
-                <a class="ml-3 text-gray-500">
-                  <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
-                    <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
-                    <circle cx="4" cy="4" r="2" stroke="none"></circle>
-                  </svg>
-                </a>
-              </span>
-            </div>
-          </footer>
+          </div>
+          <div
+            className="top-auto bottom-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden h-70-px"
+            style={{ transform: "translateZ(0)" }}
+          >
+            <svg
+              className="absolute bottom-0 overflow-hidden"
+              xmlns="http://www.w3.org/2000/svg"
+              preserveAspectRatio="none"
+              version="1.1"
+              viewBox="0 0 2560 100"
+              x="0"
+              y="0"
+            >
+              <polygon
+                className="text-blueGray-200 fill-current"
+                points="2560 0 2560 100 0 100"
+              ></polygon>
+            </svg>
+          </div>
         </div>
+
+        <section className="pb-20 bg-blueGray-200 -mt-24">
+          <div className="container mx-auto px-4">
+            <div className="flex flex-wrap">
+              <div className="lg:pt-12 pt-6 w-full md:w-4/12 px-4 text-center">
+                <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
+                  <div className="px-4 py-5 flex-auto">
+                    <div className="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-red-400">
+                      <i className="fas fa-award"></i>
+                    </div>
+                    <h6 className="text-xl font-semibold">Awarded Agency</h6>
+                    <p className="mt-2 mb-4 text-blueGray-500">
+                      Divide details about your product or agency work into
+                      parts. A paragraph describing a feature will be enough.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="w-full md:w-4/12 px-4 text-center">
+                <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
+                  <div className="px-4 py-5 flex-auto">
+                    <div className="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-lightBlue-400">
+                      <i className="fas fa-retweet"></i>
+                    </div>
+                    <h6 className="text-xl font-semibold">Free Revisions</h6>
+                    <p className="mt-2 mb-4 text-blueGray-500">
+                      Keep you user engaged by providing meaningful information.
+                      Remember that by this time, the user is curious.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="pt-6 w-full md:w-4/12 px-4 text-center">
+                <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
+                  <div className="px-4 py-5 flex-auto">
+                    <div className="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-emerald-400">
+                      <i className="fas fa-fingerprint"></i>
+                    </div>
+                    <h6 className="text-xl font-semibold">Verified Company</h6>
+                    <p className="mt-2 mb-4 text-blueGray-500">
+                      Write a few lines about each one. A paragraph describing a
+                      feature will be enough. Keep you user engaged!
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex flex-wrap items-center mt-32">
+              <div className="w-full md:w-5/12 px-4 mr-auto ml-auto">
+                <div className="text-blueGray-500 p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-white">
+                  <i className="fas fa-user-friends text-xl"></i>
+                </div>
+                <h3 className="text-3xl mb-2 font-semibold leading-normal">
+                  Working with us is a pleasure
+                </h3>
+                <p className="text-lg font-light leading-relaxed mt-4 mb-4 text-blueGray-600">
+                  Don't let your uses guess by attaching tooltips and popoves to
+                  any element. Just make sure you enable them first via
+                  JavaScript.
+                </p>
+                <p className="text-lg font-light leading-relaxed mt-0 mb-4 text-blueGray-600">
+                  The kit comes with three pre-built pages to help you get
+                  started faster. You can change the text and images and you're
+                  good to go. Just make sure you enable them first via
+                  JavaScript.
+                </p>
+                <Link to="/" className="font-bold text-blueGray-700 mt-8">
+                  Check Notus React!
+                </Link>
+              </div>
+
+              <div className="w-full md:w-4/12 px-4 mr-auto ml-auto">
+                <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded-lg bg-lightBlue-500">
+                  <img
+                    alt="..."
+                    src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80"
+                    className="w-full align-middle rounded-t-lg"
+                  />
+                  <blockquote className="relative p-8 mb-4">
+                    <svg
+                      preserveAspectRatio="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 583 95"
+                      className="absolute left-0 w-full block h-95-px -top-94-px"
+                    >
+                      <polygon
+                        points="-30,95 583,95 583,65"
+                        className="text-lightBlue-500 fill-current"
+                      ></polygon>
+                    </svg>
+                    <h4 className="text-xl font-bold text-white">
+                      Top Notch Services
+                    </h4>
+                    <p className="text-md font-light mt-2 text-white">
+                      The Arctic Ocean freezes every winter and much of the
+                      sea-ice then thaws every summer, and that process will
+                      continue whatever happens.
+                    </p>
+                  </blockquote>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="relative py-20">
+          <div
+            className="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20 h-20"
+            style={{ transform: "translateZ(0)" }}
+          >
+            <svg
+              className="absolute bottom-0 overflow-hidden"
+              xmlns="http://www.w3.org/2000/svg"
+              preserveAspectRatio="none"
+              version="1.1"
+              viewBox="0 0 2560 100"
+              x="0"
+              y="0"
+            >
+              <polygon
+                className="text-white fill-current"
+                points="2560 0 2560 100 0 100"
+              ></polygon>
+            </svg>
+          </div>
+
+          <div className="container mx-auto px-4">
+            <div className="items-center flex flex-wrap">
+              <div className="w-full md:w-4/12 ml-auto mr-auto px-4">
+                <img
+                  alt="..."
+                  className="max-w-full rounded-lg shadow-lg"
+                  src="https://images.unsplash.com/photo-1555212697-194d092e3b8f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
+                />
+              </div>
+              <div className="w-full md:w-5/12 ml-auto mr-auto px-4">
+                <div className="md:pr-12">
+                  <div className="text-lightBlue-600 p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-lightBlue-300">
+                    <i className="fas fa-rocket text-xl"></i>
+                  </div>
+                  <h3 className="text-3xl font-semibold">A growing company</h3>
+                  <p className="mt-4 text-lg leading-relaxed text-blueGray-500">
+                    The extension comes with three pre-built pages to help you
+                    get started faster. You can change the text and images and
+                    you're good to go.
+                  </p>
+                  <ul className="list-none mt-6">
+                    <li className="py-2">
+                      <div className="flex items-center">
+                        <div>
+                          <span className="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-lightBlue-600 bg-lightBlue-200 mr-3">
+                            <i className="fas fa-fingerprint"></i>
+                          </span>
+                        </div>
+                        <div>
+                          <h4 className="text-blueGray-500">
+                            Carefully crafted components
+                          </h4>
+                        </div>
+                      </div>
+                    </li>
+                    <li className="py-2">
+                      <div className="flex items-center">
+                        <div>
+                          <span className="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-lightBlue-600 bg-lightBlue-200 mr-3">
+                            <i className="fab fa-html5"></i>
+                          </span>
+                        </div>
+                        <div>
+                          <h4 className="text-blueGray-500">
+                            Amazing page examples
+                          </h4>
+                        </div>
+                      </div>
+                    </li>
+                    <li className="py-2">
+                      <div className="flex items-center">
+                        <div>
+                          <span className="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-lightBlue-600 bg-lightBlue-200 mr-3">
+                            <i className="far fa-paper-plane"></i>
+                          </span>
+                        </div>
+                        <div>
+                          <h4 className="text-blueGray-500">
+                            Dynamic components
+                          </h4>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="pt-20 pb-48">
+          <div className="container mx-auto px-4">
+            <div className="flex flex-wrap justify-center text-center mb-24">
+              <div className="w-full lg:w-6/12 px-4">
+                <h2 className="text-4xl font-semibold">Here are our heroes</h2>
+                <p className="text-lg leading-relaxed m-4 text-blueGray-500">
+                  According to the National Oceanic and Atmospheric
+                  Administration, Ted, Scambos, NSIDClead scentist, puts the
+                  potentially record maximum.
+                </p>
+              </div>
+            </div>
+            <div className="flex flex-wrap">
+              <div className="w-full md:w-6/12 lg:w-3/12 lg:mb-0 mb-12 px-4">
+                <div className="px-6">
+                  <img
+                    alt="..."
+                    src={require("../../assets/img/team-1-800x800.jpg").default}
+                    className="shadow-lg rounded-full mx-auto max-w-120-px"
+                  />
+                  <div className="pt-6 text-center">
+                    <h5 className="text-xl font-bold">Ryan Tompson</h5>
+                    <p className="mt-1 text-sm text-blueGray-400 uppercase font-semibold">
+                      Web Developer
+                    </p>
+                    <div className="mt-6">
+                      <button
+                        className="bg-lightBlue-400 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
+                        type="button"
+                      >
+                        <i className="fab fa-twitter"></i>
+                      </button>
+                      <button
+                        className="bg-lightBlue-600 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
+                        type="button"
+                      >
+                        <i className="fab fa-facebook-f"></i>
+                      </button>
+                      <button
+                        className="bg-pink-500 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
+                        type="button"
+                      >
+                        <i className="fab fa-dribbble"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="w-full md:w-6/12 lg:w-3/12 lg:mb-0 mb-12 px-4">
+                <div className="px-6">
+                  <img
+                    alt="..."
+                    src={require("../../assets/img/team-2-800x800.jpg").default}
+                    className="shadow-lg rounded-full mx-auto max-w-120-px"
+                  />
+                  <div className="pt-6 text-center">
+                    <h5 className="text-xl font-bold">Romina Hadid</h5>
+                    <p className="mt-1 text-sm text-blueGray-400 uppercase font-semibold">
+                      Marketing Specialist
+                    </p>
+                    <div className="mt-6">
+                      <button
+                        className="bg-red-600 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
+                        type="button"
+                      >
+                        <i className="fab fa-google"></i>
+                      </button>
+                      <button
+                        className="bg-lightBlue-600 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
+                        type="button"
+                      >
+                        <i className="fab fa-facebook-f"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="w-full md:w-6/12 lg:w-3/12 lg:mb-0 mb-12 px-4">
+                <div className="px-6">
+                  <img
+                    alt="..."
+                    src={require("../../assets/img/team-3-800x800.jpg").default}
+                    className="shadow-lg rounded-full mx-auto max-w-120-px"
+                  />
+                  <div className="pt-6 text-center">
+                    <h5 className="text-xl font-bold">Alexa Smith</h5>
+                    <p className="mt-1 text-sm text-blueGray-400 uppercase font-semibold">
+                      UI/UX Designer
+                    </p>
+                    <div className="mt-6">
+                      <button
+                        className="bg-red-600 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
+                        type="button"
+                      >
+                        <i className="fab fa-google"></i>
+                      </button>
+                      <button
+                        className="bg-lightBlue-400 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
+                        type="button"
+                      >
+                        <i className="fab fa-twitter"></i>
+                      </button>
+                      <button
+                        className="bg-blueGray-700 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
+                        type="button"
+                      >
+                        <i className="fab fa-instagram"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="w-full md:w-6/12 lg:w-3/12 lg:mb-0 mb-12 px-4">
+                <div className="px-6">
+                  <img
+                    alt="..."
+                    src={require("../../assets/img/team-4-470x470.png").default}
+                    className="shadow-lg rounded-full mx-auto max-w-120-px"
+                  />
+                  <div className="pt-6 text-center">
+                    <h5 className="text-xl font-bold">Jenna Kardi</h5>
+                    <p className="mt-1 text-sm text-blueGray-400 uppercase font-semibold">
+                      Founder and CEO
+                    </p>
+                    <div className="mt-6">
+                      <button
+                        className="bg-pink-500 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
+                        type="button"
+                      >
+                        <i className="fab fa-dribbble"></i>
+                      </button>
+                      <button
+                        className="bg-red-600 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
+                        type="button"
+                      >
+                        <i className="fab fa-google"></i>
+                      </button>
+                      <button
+                        className="bg-lightBlue-400 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
+                        type="button"
+                      >
+                        <i className="fab fa-twitter"></i>
+                      </button>
+                      <button
+                        className="bg-blueGray-700 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
+                        type="button"
+                      >
+                        <i className="fab fa-instagram"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="pb-20 relative block bg-blueGray-800">
+          <div
+            className="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20 h-20"
+            style={{ transform: "translateZ(0)" }}
+          >
+            <svg
+              className="absolute bottom-0 overflow-hidden"
+              xmlns="http://www.w3.org/2000/svg"
+              preserveAspectRatio="none"
+              version="1.1"
+              viewBox="0 0 2560 100"
+              x="0"
+              y="0"
+            >
+              <polygon
+                className="text-blueGray-800 fill-current"
+                points="2560 0 2560 100 0 100"
+              ></polygon>
+            </svg>
+          </div>
+
+          <div className="container mx-auto px-4 lg:pt-24 lg:pb-64">
+            <div className="flex flex-wrap text-center justify-center">
+              <div className="w-full lg:w-6/12 px-4">
+                <h2 className="text-4xl font-semibold text-white">
+                  Build something
+                </h2>
+                <p className="text-lg leading-relaxed mt-4 mb-4 text-blueGray-400">
+                  Put the potentially record low maximum sea ice extent tihs
+                  year down to low ice. According to the National Oceanic and
+                  Atmospheric Administration, Ted, Scambos.
+                </p>
+              </div>
+            </div>
+            <div className="flex flex-wrap mt-12 justify-center">
+              <div className="w-full lg:w-3/12 px-4 text-center">
+                <div className="text-blueGray-800 p-3 w-12 h-12 shadow-lg rounded-full bg-white inline-flex items-center justify-center">
+                  <i className="fas fa-medal text-xl"></i>
+                </div>
+                <h6 className="text-xl mt-5 font-semibold text-white">
+                  Excelent Services
+                </h6>
+                <p className="mt-2 mb-4 text-blueGray-400">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+              </div>
+              <div className="w-full lg:w-3/12 px-4 text-center">
+                <div className="text-blueGray-800 p-3 w-12 h-12 shadow-lg rounded-full bg-white inline-flex items-center justify-center">
+                  <i className="fas fa-poll text-xl"></i>
+                </div>
+                <h5 className="text-xl mt-5 font-semibold text-white">
+                  Grow your market
+                </h5>
+                <p className="mt-2 mb-4 text-blueGray-400">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+              </div>
+              <div className="w-full lg:w-3/12 px-4 text-center">
+                <div className="text-blueGray-800 p-3 w-12 h-12 shadow-lg rounded-full bg-white inline-flex items-center justify-center">
+                  <i className="fas fa-lightbulb text-xl"></i>
+                </div>
+                <h5 className="text-xl mt-5 font-semibold text-white">
+                  Launch time
+                </h5>
+                <p className="mt-2 mb-4 text-blueGray-400">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section className="relative block py-24 lg:pt-0 bg-blueGray-800">
+          <div className="container mx-auto px-4">
+            <div className="flex flex-wrap justify-center lg:-mt-64 -mt-48">
+              <div className="w-full lg:w-6/12 px-4">
+                <div className="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-blueGray-200">
+                  <div className="flex-auto p-5 lg:p-10">
+                    <h4 className="text-2xl font-semibold">
+                      Want to work with us?
+                    </h4>
+                    <p className="leading-relaxed mt-1 mb-4 text-blueGray-500">
+                      Complete this form and we will get back to you in 24
+                      hours.
+                    </p>
+                    <div className="relative w-full mb-3 mt-8">
+                      <label
+                        className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
+                        htmlFor="full-name"
+                      >
+                        Full Name
+                      </label>
+                      <input
+                        type="text"
+                        className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                        placeholder="Full Name"
+                      />
+                    </div>
+
+                    <div className="relative w-full mb-3">
+                      <label
+                        className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
+                        htmlFor="email"
+                      >
+                        Email
+                      </label>
+                      <input
+                        type="email"
+                        className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                        placeholder="Email"
+                      />
+                    </div>
+
+                    <div className="relative w-full mb-3">
+                      <label
+                        className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
+                        htmlFor="message"
+                      >
+                        Message
+                      </label>
+                      <textarea
+                        rows="4"
+                        cols="80"
+                        className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
+                        placeholder="Type a message..."
+                      />
+                    </div>
+                    <div className="text-center mt-6">
+                      <button
+                        className="bg-blueGray-800 text-white active:bg-blueGray-600 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                        type="button"
+                      >
+                        Send Message
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      <Footer />
+    </div>
     );
 }
 
