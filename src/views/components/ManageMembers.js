@@ -53,7 +53,7 @@ export default function ManageMembers() {
                             required
                         />
                     </div>
-                    <button type="submit" className="px-4 py-2 bg-[darkred] text-white rounded hover:bg-blue-600">Add Member</button>
+                    <button type="submit" className="px-4 py-2 bg-[darkred] text-white rounded hover:bg-[red]">Add Member</button>
                 </form>
             </div>
             <div>

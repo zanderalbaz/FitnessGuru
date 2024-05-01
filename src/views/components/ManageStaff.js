@@ -127,7 +127,7 @@ export default function ManageStaff() {
                             placeholder="Status"
                             className="block w-full px-3 py-2 mb-4 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring focus:border-blue-300"
                         />
-                        <button type="submit" className="px-4 py-2 bg-[darkred] text-white rounded hover:bg-green-600">Add New Staff</button>
+                        <button type="submit" className="px-4 py-2 bg-[darkred] text-white rounded hover:bg-[red]">Add New Staff</button>
                     </form>
                 </div>
             </div>
