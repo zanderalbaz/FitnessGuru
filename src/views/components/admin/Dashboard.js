@@ -13,10 +13,10 @@ function Dashboard() {
         <div className="w-full">
           <HeaderStats />
         </div>
-        <div className="w-full xl:w-8/12 mb-12 xl:mb-0 px-4 mt-[-32px]">
+        <div className="w-full xl:w-8/12 mb-12 xl:mb-0 px-4 mt-[-36px]">
           <CardLineChart />
         </div>
-        <div className="w-full xl:w-4/12 px-4 mt-[-32px]">
+        <div className="w-full xl:w-4/12 px-4 mt-[-36px]">
           <CardBarChart />
         </div>
         <div className="flex flex-auto justify-center pt-16">
