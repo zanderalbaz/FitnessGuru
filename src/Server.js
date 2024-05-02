@@ -14,8 +14,14 @@ app.use(bodyParser.json());
 
 connectToDatabase() //Returns DB Instance (db)
     .then((db) => {
+        // I didnt add Routes here!!
+        app.use('/api/videos', memberRoutes(db));
+        app.use('/api/roles', memberRoutes(db));
+        app.use('/api/upload-video', memberRoutes(db));
+        app.use('/api/update-video', memberRoutes(db));
+        app.use('/api/delete-video', memberRoutes(db));
+        app.use('/api/staff', memberRoutes(db));
         app.use('/api/members', memberRoutes(db));
-        app.use('/api/staff')
         app.use('/api/user', userRoutes(db));
 
 

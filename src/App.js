@@ -11,6 +11,8 @@ import NavBar from '../src/views/components/Navbar';
 import Dashboard from '../src/views/components/admin/Dashboard'
 import ManageMembers from '../src/views/components/ManageMembers'
 import ManageStaff from '../src/views/components/ManageStaff'
+import ManageCourses from '../src/views/components/ManageCourses'
+import MyCourses from '../src/views/components/MyCourses'
 
 const App = () => {
   return (
@@ -22,7 +24,8 @@ const App = () => {
           <Route path="/" element={<HomePage />} /> 
           <Route path="/manage-members" element={<ManageMembers />} /> 
           <Route path="/manage-staff" element={<ManageStaff />} /> 
-          <Route path="/courses" element={<StaffPage />} />
+          <Route path="/manage-courses" element={<ManageCourses />} />
+          <Route path="/my-courses" element={<MyCourses />} />
           <Route path="/Dashboard" element={<Dashboard />} />
         </Routes>
       </AuthProvider>
