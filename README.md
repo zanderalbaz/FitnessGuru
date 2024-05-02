@@ -15,8 +15,8 @@ They decided to go with Custom-built software (does not ,mean this is the best s
 3. run `npm install` then `npm start`
 In order to use the database with this application you must:
 1. open CLI
-2. navigate to /model
-3. run `node Database.js` 
+2. navigate to /src
+3. run `node Server.js` 
 
 # Sprint 1 
  1. As a Staff, I want to view and update member information so I can verify memberships and process membership transactions.

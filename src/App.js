@@ -24,9 +24,9 @@ const App = () => {
           <Route path="/" element={<HomePage />} /> 
           <Route path="/manage-members" element={<ManageMembers />} /> 
           <Route path="/manage-staff" element={<ManageStaff />} /> 
-          <Route path="/manage-courses" element={<ManageCourses />} />
+          <Route path="/manage-courses" element={<ProtectedManageCourses />} />
           <Route path="/my-courses" element={<MyCourses />} />
-          <Route path="/Dashboard" element={<Dashboard />} />
+          <Route path="/Dashboard" element={<ProtectedDashboard />} />
         </Routes>
       </AuthProvider>
     </Router>
@@ -38,14 +38,8 @@ const ProtectedDashboard = () => {
   if(!loggedIn){
     return <Navigate to="/" replace />
   }
-  if(isMember()){
-    return <h1>Member Dashboard</h1>
-  }
-  else if(isStaff()){
-    return <h1>Staff Dashboard</h1>
-  }
-  else if(isManager()){
-    return <h1>Manager Dashboard</h1>
+  if(isManager()){
+    return <Dashboard />
   }
   else {
     console.log("could not recognize user type");
@@ -54,12 +48,20 @@ const ProtectedDashboard = () => {
   }
 }
 
-const ManagerPage = () => {
+const ProtectedManageCourses = () => {
   const { loggedIn, isManager} = useAuth();
   if (!loggedIn || !isManager()) { 
     return <Navigate to="/" replace />;
   }
-  return <h1>Manager Page</h1>;
+  return <ManageCourses />;
+};
+
+const ProtectedManageStaff = () => {
+  const { loggedIn, isManager} = useAuth();
+  if (!loggedIn || !isManager()) { 
+    return <Navigate to="/" replace />;
+  }
+  return <ManageStaff />;
 };
 
 

@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const {connectToDatabase} = require('./models/Database');
 const memberRoutes = require('./routes/memberRoutes');
 const userRoutes = require('./routes/userRoutes');
-
+const managerRoutes = require('./routes/managerRoutes');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -22,6 +22,7 @@ connectToDatabase() //Returns DB Instance (db)
         app.use('/api/delete-video', memberRoutes(db));
         app.use('/api/staff', memberRoutes(db));
         app.use('/api/members', memberRoutes(db));
+        app.use('/api/manager', managerRoutes(db));
         app.use('/api/user', userRoutes(db));
 
 

@@ -1,7 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import '@fortawesome/free-solid-svg-icons';
 
 export default function CardStats({
   statSubtitle,
