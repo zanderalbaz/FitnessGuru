@@ -3,26 +3,40 @@ import axios from 'axios';
 
 export default function ManageMembers() {
     const [members, setMembers] = useState([]);
-    const [newMember, setNewMember] = useState({ name: '', email: '' });
 
     useEffect(() => {
-        axios.get('/api/members')
-            .then(response => setMembers(response.data))
-            .catch(error => console.error('Error fetching members:', error));
+        fetchMembers();
     }, []);
 
-    const handleInputChange = (e) => {
-        setNewMember({ ...newMember, [e.target.name]: e.target.value });
+    const fetchMembers = () => {
+        axios.get('http://localhost:5000/api/staff/get-members')
+            .then(response => {
+                console.log(response.data);
+                setMembers(response.data);
+            })
+            .catch(error => {
+                console.error('Error fetching members:', error);
+            });
     };
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        axios.post('/api/members', newMember)
+    const handleMembershipTypeChange = (id, value) => {
+        setMembers(prevMembers => (
+            prevMembers.map(member => (
+                member.id === id ? { ...member, membership_type: value } : member
+            ))
+        ));
+    };
+
+    const handleUpdateMember = (id) => {
+        const memberToUpdate = members.find(member => member.id === id);
+        axios.put(`http://localhost:5000/api/staff/update-member/${id}`, { membership_type: memberToUpdate.membership_type })
             .then(response => {
-                setMembers([...members, response.data]);
-                setNewMember({ name: '', email: '' });
+                console.log('Member updated successfully:', response.data);
+                fetchMembers();
             })
-            .catch(error => console.error('Error adding member:', error));
+            .catch(error => {
+                console.error('Error updating member:', error);
+            });
     };
 
     return (
@@ -33,7 +47,24 @@ export default function ManageMembers() {
                 <ul className="mt-4">
                     {members.map(member => (
                         <li key={member.id} className="mb-2 p-2 border border-gray-300 rounded">
-                            {member.name} - {member.email}
+                            <div className="flex justify-between items-center">
+                                <div>
+                                    <span className="font-semibold">{member.name}</span> - {member.email}
+                                </div>
+                                <div>
+                                    <select
+                                        value={member.membership_type}
+                                        onChange={(e) => handleMembershipTypeChange(member.id, e.target.value)}
+                                        className="border border-gray-300 rounded-md px-2 py-1"
+                                    >
+                                        <option value="full">Full</option>
+                                        <option value="restricted">restricted</option>
+                                    </select>
+                                    <button onClick={() => handleUpdateMember(member.id)} className="ml-2 bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded">
+                                        Update
+                                    </button>
+                                </div>
+                            </div>
                         </li>
                     ))}
                 </ul>

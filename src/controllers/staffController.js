@@ -6,9 +6,9 @@
 
 
 function getMembers(db, req, res) {
-    const query = `SELECT member.user_id, member.membership_type, user.username, user.email
+    const query = `SELECT member.member_id, member.membership_type, user.username, user.email
                    FROM member JOIN user 
-                   ON member.user_id = user.user.id`;
+                   ON member.user_id = user.user_id`;
 
     db.all(query, (err, rows) => {
         if (err) {
@@ -26,5 +26,21 @@ function getMembers(db, req, res) {
     });
 }
 
+function updateMembershipType(db, req, res) {
+    const { id } = req.params; 
+    const { membershipType } = req.body;
 
-module.exports = { getMembers };
+    const updateQuery = `UPDATE member SET membership_type = ? WHERE member_id = ?`;
+
+    db.run(updateQuery, [membershipType, id], function (err) {
+        if (err) {
+            console.error('Error updating membership type:', err);
+            res.status(500).json({ error: 'Internal Server Error' });
+        } else {
+            res.status(200).json({ message: 'Membership type updated successfully' });
+        }
+    });
+}
+
+
+module.exports = { getMembers, updateMembershipType };
