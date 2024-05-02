@@ -18,7 +18,7 @@ export default function MyCourses() {
         return <div>Loading user information...</div>;
     }
 
-    return (
+    return (  
         <div className="max-w-4xl mx-auto px-4 py-6">
             <h1 className="text-xl font-bold mb-4">Training Courses for {user.role}</h1>
             <ul>

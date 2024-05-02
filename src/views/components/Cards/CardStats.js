@@ -1,5 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import '@fortawesome/free-solid-svg-icons';
 
 export default function CardStats({
   statSubtitle,
@@ -25,14 +27,14 @@ export default function CardStats({
               </span>
             </div>
             <div className="relative w-auto pl-4 flex-initial">
-              <div
+              {/* <div
                 className={
                   "text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded-full " +
                   statIconColor
                 }
               >
                 <i className={statIconName}></i>
-              </div>
+              </div> */}
             </div>
           </div>
           <p className="text-sm text-blueGray-400 mt-4">

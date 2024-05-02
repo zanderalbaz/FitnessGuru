@@ -6,11 +6,15 @@ import CardLineChart from "../Cards/CardLineChart.js";
 import CardBarChart from "../Cards/CardBarChart.js";
 import CardPageVisits from "../Cards/CardPageVisits.js";
 import CardSocialTraffic from "../Cards/CardSocialTraffic.js";
+import HeaderStats from "../Headers/HeaderStats.js";
 
 function Dashboard() {
   return (
     <>
       <div className="flex flex-wrap">
+      <div className="w-full ">
+          <HeaderStats />
+        </div>
         <div className="w-full xl:w-8/12 mb-12 xl:mb-0 px-4">
           <CardLineChart />
         </div>
